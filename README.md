@@ -139,3 +139,9 @@ git push -u origin feat/power-bi-prompt-generator
 Replace the remote URL with the target repository. If it is already a Git repository, skip `git init`; if the remote already exists, inspect it with `git remote -v` rather than adding it again.
 
 Before opening a pull request, check the target repository's `CONTRIBUTING.md`, pull request template, branch naming rules, required checks, and code-of-conduct or licensing requirements. Create a PR from `feat/power-bi-prompt-generator` into the repository's stated base branch, summarize the user-facing behavior and tests, link any related issue, and complete the repository's required review/checklist steps. The target repository is not specified here, so its exact contribution rules cannot be asserted in advance.
+
+## Development Update
+
+- Documented the project features and local setup instructions.
+- Included test execution steps using Node.js.
+- Clarified that prompt generation runs locally and does not connect to an AI API.
