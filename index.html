@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f7fb">
+    <meta name="description" content="Plan a Power BI dashboard with a tailored, reusable AI prompt.">
+    <title>AI Power BI Dashboard Prompt Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#dashboard-form">Skip to dashboard details</a>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Promptly BI home">
+        <span class="brand-mark" aria-hidden="true">P</span>
+        <span>promptly<span class="brand-accent">.bi</span></span>
+      </a>
+      <div class="topbar-note"><span class="status-dot"></span> Prompt builder <span class="topbar-divider">/</span> No AI connection</div>
+    </header>
+
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="eyebrow">POWER BI PLANNING STUDIO</p>
+          <h1 id="page-title">Turn your data into a <span>clearer dashboard plan.</span></h1>
+          <p class="hero-description">Describe your project and get a thoughtful, reusable prompt for planning your next Power BI dashboard. No API key or AI connection needed.</p>
+          <div class="hero-points">
+            <span><span class="check-icon" aria-hidden="true">✓</span> Built around your data</span>
+            <span><span class="check-icon" aria-hidden="true">✓</span> Practical KPI &amp; visual ideas</span>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="How it works">
+          <span class="hero-card-icon" aria-hidden="true">✳</span>
+          <div>
+            <strong>Your prompt, not an AI answer</strong>
+            <p>This tool creates instructions you can copy into the AI assistant of your choice.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="sample-section" aria-labelledby="sample-heading">
+        <div>
+          <p class="section-kicker">NEED A STARTING POINT?</p>
+          <h2 id="sample-heading">Try a sample project</h2>
+        </div>
+        <div class="sample-buttons" role="group" aria-label="Load a sample project">
+          <button class="sample-button" type="button" data-sample="sales"><span aria-hidden="true">↗</span> Sales performance</button>
+          <button class="sample-button" type="button" data-sample="hr"><span aria-hidden="true">◉</span> HR analytics</button>
+          <button class="sample-button" type="button" data-sample="finance"><span aria-hidden="true">▤</span> Financial performance</button>
+        </div>
+      </section>
+
+      <div class="workspace-grid">
+        <section class="panel form-panel" aria-labelledby="form-heading">
+          <div class="panel-heading">
+            <div class="step-badge">01</div>
+            <div>
+              <p class="section-kicker">PROJECT DETAILS</p>
+              <h2 id="form-heading">Tell us about your dashboard</h2>
+              <p class="panel-subtitle">A little context helps create a much more useful prompt.</p>
+            </div>
+          </div>
+
+          <form id="dashboard-form" novalidate>
+            <div class="form-grid">
+              <div class="field field-full">
+                <label for="projectName">Project or dashboard name <span class="required-mark">*</span></label>
+                <input id="projectName" name="projectName" type="text" placeholder="e.g. Quarterly sales performance" maxlength="100" required>
+                <small class="field-error" id="projectName-error"></small>
+              </div>
+
+              <div class="field">
+                <label for="domain">Business domain <span class="required-mark">*</span></label>
+                <select id="domain" name="domain" required>
+                  <option value="">Choose a domain</option>
+                  <option>Sales</option>
+                  <option>Finance</option>
+                  <option>HR</option>
+                  <option>Marketing</option>
+                  <option>Healthcare</option>
+                  <option>Education</option>
+                  <option value="Custom">Custom</option>
+                </select>
+                <small class="field-error" id="domain-error"></small>
+              </div>
+
+              <div class="field" id="customDomainField" hidden>
+                <label for="customDomain">Custom business domain <span class="required-mark">*</span></label>
+                <input id="customDomain" name="customDomain" type="text" placeholder="e.g. Supply chain" maxlength="60">
+                <small class="field-error" id="customDomain-error"></small>
+              </div>
+
+              <div class="field field-full">
+                <label for="datasetDescription">What does your dataset contain? <span class="required-mark">*</span></label>
+                <textarea id="datasetDescription" name="datasetDescription" rows="3" placeholder="Describe the source, what one row represents, and any known data limitations." maxlength="1200" required></textarea>
+                <small class="field-hint">Avoid including confidential or personally identifiable information.</small>
+                <small class="field-error" id="datasetDescription-error"></small>
+              </div>
+
+              <div class="field field-full">
+                <label for="tableNames">Table names <span class="optional-label">Optional</span></label>
+                <input id="tableNames" name="tableNames" type="text" placeholder="e.g. Orders, Products, Calendar (comma-separated)" maxlength="300">
+              </div>
+
+              <div class="field field-full">
+                <label for="columns">Table and column names <span class="required-mark">*</span></label>
+                <textarea id="columns" name="columns" rows="3" placeholder="e.g. Orders: OrderDate, Product, Region, Revenue, Cost, Quantity" maxlength="1200" required></textarea>
+                <small class="field-hint">Enter the actual names if known. Recommendations will be marked conditional when fields are missing.</small>
+                <small class="field-error" id="columns-error"></small>
+              </div>
+
+              <div class="field">
+                <label for="audience">Target audience <span class="required-mark">*</span></label>
+                <select id="audience" name="audience" required>
+                  <option value="">Choose an audience</option>
+                  <option>Manager</option>
+                  <option>Analyst</option>
+                  <option>Executive</option>
+                  <option>Business Owner</option>
+                </select>
+                <small class="field-error" id="audience-error"></small>
+              </div>
+
+              <div class="field">
+                <label for="period">Preferred analysis period <span class="optional-label">Optional</span></label>
+                <input id="period" name="period" type="text" placeholder="e.g. Monthly, last 3 years" maxlength="100">
+              </div>
+
+              <div class="field field-full">
+                <label for="objective">Main business objective <span class="required-mark">*</span></label>
+                <textarea id="objective" name="objective" rows="3" placeholder="What decision should this dashboard help people make?" maxlength="800" required></textarea>
+                <small class="field-error" id="objective-error"></small>
+              </div>
+
+              <div class="field">
+                <label for="complexity">Dashboard complexity</label>
+                <select id="complexity" name="complexity">
+                  <option>Beginner</option>
+                  <option>Intermediate</option>
+                  <option>Advanced</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="technique">Prompting technique</label>
+                <select id="technique" name="technique">
+                  <option value="zero-shot">Zero-shot</option>
+                  <option value="few-shot">Few-shot</option>
+                  <option value="role-based">Role-based</option>
+                </select>
+              </div>
+
+              <div class="field field-full">
+                <label for="outputType">Desired output</label>
+                <select id="outputType" name="outputType">
+                  <option>Complete dashboard blueprint</option>
+                  <option>Dashboard plan</option>
+                  <option>KPI list</option>
+                  <option>Chart recommendations</option>
+                  <option>DAX guidance</option>
+                </select>
+              </div>
+            </div>
+            <div class="technique-note" id="techniqueNote" aria-live="polite"></div>
+            <div class="form-actions">
+              <button class="button button-primary button-generate" type="submit"><span aria-hidden="true">✦</span> Generate prompt</button>
+              <button class="button button-quiet" id="clearFormButton" type="button">Clear form</button>
+            </div>
+            <p class="form-footnote"><span class="required-mark">*</span> Required fields</p>
+          </form>
+        </section>
+
+        <section class="panel output-panel" aria-labelledby="output-heading">
+          <div class="panel-heading output-heading">
+            <div class="step-badge step-badge-green">02</div>
+            <div>
+              <p class="section-kicker">YOUR GENERATED PROMPT</p>
+              <h2 id="output-heading">Ready when you are</h2>
+              <p class="panel-subtitle">Your structured prompt will appear here.</p>
+            </div>
+          </div>
+
+          <div class="prompt-empty" id="promptEmpty">
+            <div class="empty-illustration" aria-hidden="true"><span>✧</span><span>▤</span></div>
+            <h3>Your workspace is ready</h3>
+            <p>Fill in your project details or load a sample, then generate a prompt to see tailored KPIs, visuals and DAX guidance.</p>
+          </div>
+          <div class="generated-content" id="generatedContent" hidden>
+            <div class="prompt-meta">
+              <span class="technique-badge" id="techniqueBadge"></span>
+              <span class="generated-title" id="generatedTitle"></span>
+            </div>
+            <label class="visually-hidden" for="generatedPrompt">Generated dashboard planning prompt</label>
+            <textarea id="generatedPrompt" class="prompt-textarea" readonly spellcheck="false" aria-label="Generated dashboard planning prompt"></textarea>
+            <div class="output-actions">
+              <button class="button button-primary" id="copyPromptButton" type="button"><span aria-hidden="true">▣</span> Copy prompt</button>
+              <button class="button button-secondary" id="savePromptButton" type="button">Save prompt</button>
+              <button class="button button-secondary" id="downloadPromptButton" type="button">Download .txt</button>
+              <button class="button button-quiet" id="generateAgainButton" type="button">Generate again</button>
+            </div>
+          </div>
+          <div class="status-message" id="statusMessage" role="status" aria-live="polite"></div>
+
+          <div class="recommendations" id="recommendations" hidden>
+            <section class="recommendation-section">
+              <div class="recommendation-heading"><span class="recommendation-icon icon-violet" aria-hidden="true">↗</span><div><h3>KPI recommendations</h3><p>Check each KPI against the fields you actually have.</p></div></div>
+              <ul class="recommendation-list" id="kpiList"></ul>
+            </section>
+            <section class="recommendation-section">
+              <div class="recommendation-heading"><span class="recommendation-icon icon-blue" aria-hidden="true">▥</span><div><h3>Visual recommendations</h3><p>Suggested views guided by your objective.</p></div></div>
+              <div class="chart-list" id="chartList"></div>
+            </section>
+            <section class="recommendation-section">
+              <div class="recommendation-heading"><span class="recommendation-icon icon-green" aria-hidden="true">ƒ</span><div><h3>DAX starting points</h3><p>Templates only — verify names, relationships and assumptions before use.</p></div></div>
+              <div class="dax-list" id="daxList"></div>
+            </section>
+          </div>
+
+          <section class="history-section" id="historySection">
+            <div class="history-heading">
+              <div><p class="section-kicker">YOUR RECENT WORK</p><h3>Prompt history</h3></div>
+              <button class="button button-quiet button-small" id="toggleHistoryButton" type="button" aria-expanded="false" aria-controls="historyList">View history <span id="historyCount">0</span></button>
+            </div>
+            <div id="historyList" class="history-list" hidden></div>
+          </section>
+        </section>
+      </div>
+
+      <section class="learning-section" aria-labelledby="learning-heading">
+        <div class="learning-intro">
+          <p class="section-kicker">A LITTLE PROMPT CRAFT</p>
+          <h2 id="learning-heading">Better instructions.<br><span>More useful first drafts.</span></h2>
+          <p>Choose a technique to shape how your prompt guides an AI assistant. This app generates the prompt only; it never sends your data to an AI service.</p>
+        </div>
+        <div class="learning-cards">
+          <article class="learning-card"><span class="learning-number">01</span><h3>Zero-shot</h3><p>Give a clear task and context, without examples. Useful when requirements are straightforward.</p><code>“Recommend a monthly trend view for these fields.”</code></article>
+          <article class="learning-card"><span class="learning-number">02</span><h3>Few-shot</h3><p>Show a small example of the answer structure you want. Helpful for consistent, scannable output.</p><code>“KPI → definition → required fields → caveat.”</code></article>
+          <article class="learning-card"><span class="learning-number">03</span><h3>Role-based</h3><p>Set a relevant expert perspective to guide the depth and framing of the response.</p><code>“Act as an experienced Power BI developer…”</code></article>
+        </div>
+      </section>
+
+      <footer class="page-footer">
+        <a class="brand footer-brand" href="#"><span class="brand-mark" aria-hidden="true">P</span><span>promptly<span class="brand-accent">.bi</span></span></a>
+        <p>Thoughtful dashboard planning starts with the right questions.</p>
+        <span>Prompts stay in this browser unless you choose to copy or download them.</span>
+      </footer>
+    </main>
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
