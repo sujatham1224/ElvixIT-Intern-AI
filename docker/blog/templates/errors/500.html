@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Something went wrong — Fieldnotes{% endblock %}
+{% block content %}
+  <section class="error-page">
+    <p class="eyebrow">500 · A little hiccup</p>
+    <h1>Something went wrong<span class="accent">.</span></h1>
+    <p>The server couldn’t finish that request. Please try again in a moment.</p>
+    <a class="button" href="{{ url_for('blog.index') }}">Back to the homepage</a>
+  </section>
+{% endblock %}
