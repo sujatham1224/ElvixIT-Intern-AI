@@ -1,0 +1,316 @@
+{
+  "topics": [
+    {
+      "subject": "Python",
+      "subject_aliases": ["python", "python programming"],
+      "title": "Python programming language",
+      "aliases": ["what is python", "python language", "python programming language"],
+      "explanation": "Python is a high-level, general-purpose programming language. It is widely used for automation, web development, data analysis, and artificial intelligence.\n\n```python\nname = \"Sam\"\nprint(f\"Hello, {name}!\")\n```\n\nOutput:\n```text\nHello, Sam!\n```\n\nThis beginner-friendly example stores text in `name` and prints a greeting using an f-string.",
+      "summary": "- Python is a high-level, general-purpose programming language.\n- Common uses include automation, web development, data analysis, and AI.\n- Python code is often designed to be readable.\n- Example: `print(\"Hello, world!\")` displays `Hello, world!`.",
+      "quiz": [
+        {"question": "Which description best fits Python?", "choices": ["A high-level, general-purpose programming language", "A database query language only", "A markup language for web pages", "A stylesheet language"], "answer_index": 0, "explanation": "Python is a high-level, general-purpose programming language."},
+        {"question": "Which is a common use of Python?", "choices": ["Automation and data analysis", "Writing CSS selectors only", "Defining HTML tags only", "Replacing all database systems"], "answer_index": 0, "explanation": "Python is commonly used for automation, web development, data analysis, and AI."},
+        {"question": "What does `print(\"Hello\")` do in Python?", "choices": ["Displays Hello", "Creates a SQL table", "Changes an HTML tag", "Declares a CSS class"], "answer_index": 0, "explanation": "The print function writes the supplied text to standard output."}
+      ]
+    },
+    {
+      "subject": "SQL",
+      "subject_aliases": ["sql", "database", "databases", "structured query language"],
+      "title": "SQL",
+      "aliases": ["sql", "what is sql", "structured query language", "sql language"],
+      "explanation": "SQL (Structured Query Language) is a language used to define, query, and manipulate data in relational database systems. For example, `SELECT name FROM students WHERE active = TRUE;` asks a database for the names of active students. SQL behavior and exact syntax can vary somewhat by database system.",
+      "summary": "- SQL stands for Structured Query Language.\n- It is used with relational databases to define and work with data.\n- `SELECT` retrieves data; `INSERT`, `UPDATE`, and `DELETE` modify rows.\n- Some syntax and features vary between database systems.",
+      "quiz": [
+        {"question": "What does SQL stand for?", "choices": ["Structured Query Language", "Simple Question List", "System Queue Logic", "Standard Quick Link"], "answer_index": 0, "explanation": "SQL is commonly expanded as Structured Query Language."},
+        {"question": "Which SQL command retrieves rows?", "choices": ["SELECT", "PAINT", "STYLE", "PRINT"], "answer_index": 0, "explanation": "SELECT queries data from database tables or other queryable sources."},
+        {"question": "What type of database is SQL commonly used with?", "choices": ["Relational databases", "Image files only", "CSS documents", "Audio devices"], "answer_index": 0, "explanation": "SQL is widely used to work with relational database systems."}
+      ]
+    },
+    {
+      "subject": "SQL",
+      "subject_aliases": ["sql", "database", "databases"],
+      "title": "SQL command categories",
+      "aliases": ["types of sql commands", "sql command types", "ddl dml dql dcl tcl", "ddl", "dml", "dql", "dcl", "tcl"],
+      "explanation": "SQL commands are often grouped by purpose: DDL (Data Definition Language) defines database structures, DML (Data Manipulation Language) changes rows, DQL (Data Query Language) retrieves data, DCL (Data Control Language) manages permissions, and TCL (Transaction Control Language) manages transactions. Textbooks vary: some group SELECT under DML rather than using a separate DQL category.\n\nExamples: `CREATE TABLE` (DDL), `INSERT` (DML), `SELECT` (often DQL), `GRANT` (DCL), and `COMMIT` (TCL).",
+      "summary": "- DDL defines structures, for example `CREATE TABLE`.\n- DML changes data, for example `INSERT`, `UPDATE`, and `DELETE`.\n- DQL retrieves data, often represented by `SELECT`.\n- DCL manages permissions, for example `GRANT` and `REVOKE`.\n- TCL controls transactions, for example `COMMIT` and `ROLLBACK`.\n- Some sources classify SELECT under DML rather than a separate DQL category.",
+      "quiz": [
+        {"question": "Which category is commonly used for commands that define database structures?", "choices": ["DDL", "DCL", "TCL", "CSS"], "answer_index": 0, "explanation": "DDL includes commands such as CREATE TABLE that define database structures."},
+        {"question": "Which command is used to retrieve rows?", "choices": ["SELECT", "COMMIT", "GRANT", "CREATE"], "answer_index": 0, "explanation": "SELECT retrieves data. Some learning materials call it DQL; others group it under DML."},
+        {"question": "Which is a transaction-control command?", "choices": ["ROLLBACK", "SELECT", "HTML", "ALTER CSS"], "answer_index": 0, "explanation": "ROLLBACK is used to undo changes in a transaction that has not been committed."}
+      ]
+    },
+    {
+      "subject": "SQL",
+      "subject_aliases": ["sql", "database", "databases"],
+      "title": "SQL joins",
+      "aliases": ["sql joins", "sql join", "joins in sql", "inner join", "left join", "right join", "full outer join", "join types"],
+      "explanation": "A SQL JOIN combines rows from tables using a related column. `INNER JOIN` keeps matching rows; `LEFT JOIN` keeps every left-table row and adds matching right-table data (or NULL where there is no match). `RIGHT JOIN` keeps every right-table row. `FULL OUTER JOIN` keeps rows from both sides, matched where possible; support varies by database.\n\n```sql\nSELECT students.name, enrollments.course_id\nFROM students\nLEFT JOIN enrollments ON students.id = enrollments.student_id;\n```\n\nThis lists every student and any matching enrollment. A student without an enrollment still appears, with NULL in the enrollment columns.",
+      "summary": "- JOIN relates rows from two tables using a join condition.\n- INNER JOIN returns rows that match on both sides.\n- LEFT JOIN preserves all rows from the left table.\n- RIGHT JOIN preserves all rows from the right table.\n- FULL OUTER JOIN preserves unmatched rows from both sides where supported.",
+      "quiz": [
+        {"question": "Which join keeps every row from its left table?", "choices": ["LEFT JOIN", "INNER JOIN", "CROSS JOIN only", "DELETE JOIN"], "answer_index": 0, "explanation": "LEFT JOIN preserves all left-table rows, filling right-side columns with NULL when unmatched."},
+        {"question": "What does an INNER JOIN return?", "choices": ["Rows that meet the join condition on both sides", "Every left row whether matched or not", "Only table names", "Rows deleted from both tables"], "answer_index": 0, "explanation": "INNER JOIN returns pairs of rows that satisfy the join condition."},
+        {"question": "What connects related rows in a typical JOIN?", "choices": ["A join condition", "A CSS class", "A Python print call", "A page title"], "answer_index": 0, "explanation": "The ON condition specifies how rows from the tables are related."}
+      ]
+    },
+    {
+      "subject": "HTML",
+      "subject_aliases": ["html", "web markup", "hypertext markup language"],
+      "title": "HTML",
+      "aliases": ["html", "what is html", "hypertext markup language"],
+      "explanation": "HTML (HyperText Markup Language) is the standard markup language used to structure content on web pages. Elements such as headings, paragraphs, and links describe the content; browsers interpret that markup to build a page.\n\n```html\n<h1>Hello, web!</h1>\n<p>This is a paragraph.</p>\n```\n\nThe browser displays a heading followed by a paragraph. CSS is commonly used to control their appearance.",
+      "summary": "- HTML stands for HyperText Markup Language.\n- It structures web content with elements.\n- Elements can represent headings, paragraphs, links, and more.\n- CSS styles the presentation; JavaScript can add behavior.",
+      "quiz": [
+        {"question": "What is HTML primarily used for?", "choices": ["Structuring web content", "Querying relational databases", "Styling with selectors", "Running Python scripts"], "answer_index": 0, "explanation": "HTML marks up and structures content in web documents."},
+        {"question": "What does `<h1>` represent?", "choices": ["A top-level heading", "A database query", "A CSS property", "A JavaScript function"], "answer_index": 0, "explanation": "The h1 element is used for a top-level heading."},
+        {"question": "What does HTML stand for?", "choices": ["HyperText Markup Language", "High Transfer Machine Logic", "Home Tool Markup Link", "Hyperlink Text Management Layer"], "answer_index": 0, "explanation": "HTML is short for HyperText Markup Language."}
+      ]
+    },
+    {
+      "subject": "CSS",
+      "subject_aliases": ["css", "cascading style sheets", "web styling"],
+      "title": "CSS",
+      "aliases": ["css", "what is css", "cascading style sheets", "css language"],
+      "explanation": "CSS (Cascading Style Sheets) is a stylesheet language used to describe the presentation of HTML and other documents. A CSS rule combines a selector with declarations.\n\n```css\np { color: navy; }\n```\n\nHere, `p` selects paragraph elements and `color: navy` sets their text color.",
+      "summary": "- CSS stands for Cascading Style Sheets.\n- It controls presentation, such as colors, spacing, and layout.\n- A selector chooses elements; declarations set their styles.\n- Example: `p { color: navy; }` styles paragraph text.",
+      "quiz": [
+        {"question": "What is CSS primarily used for?", "choices": ["Styling the presentation of web content", "Querying a database", "Declaring Python variables", "Structuring database tables only"], "answer_index": 0, "explanation": "CSS styles how HTML content is presented."},
+        {"question": "In `p { color: navy; }`, what does `p` select?", "choices": ["Paragraph elements", "Python variables", "SQL rows", "Java methods"], "answer_index": 0, "explanation": "The p type selector matches paragraph elements."},
+        {"question": "What does CSS stand for?", "choices": ["Cascading Style Sheets", "Computer Script Syntax", "Common Styling System", "Color Selection Standard"], "answer_index": 0, "explanation": "CSS is short for Cascading Style Sheets."}
+      ]
+    },
+    {
+      "subject": "JavaScript",
+      "subject_aliases": ["javascript", "js", "javascript programming"],
+      "title": "JavaScript",
+      "aliases": ["javascript", "what is javascript", "javascript language", "js language"],
+      "explanation": "JavaScript is a programming language commonly used to add interactive behavior to web pages. It also runs outside browsers, for example with server-side JavaScript environments.\n\n```javascript\nconst name = \"Sam\";\nconsole.log(`Hello, ${name}!`);\n```\n\nOutput:\n```text\nHello, Sam!\n```\n\nThe example stores a string in a constant binding and logs a greeting.",
+      "summary": "- JavaScript is a programming language.\n- It commonly adds interactivity to web pages.\n- It can also run outside the browser in supported runtimes.\n- `console.log` writes a value to the console.",
+      "quiz": [
+        {"question": "What is a common use of JavaScript on a web page?", "choices": ["Adding interactive behavior", "Defining SQL tables", "Styling elements without CSS", "Replacing all HTML markup"], "answer_index": 0, "explanation": "JavaScript often provides interactive behavior on web pages."},
+        {"question": "What does `console.log(\"Hi\")` do?", "choices": ["Writes Hi to the console", "Creates an HTML heading", "Changes a CSS color", "Queries a database"], "answer_index": 0, "explanation": "console.log writes its argument to the JavaScript console."},
+        {"question": "Where can JavaScript run?", "choices": ["In browsers and other supported runtimes", "Only inside SQL tables", "Only in CSS stylesheets", "Only in image files"], "answer_index": 0, "explanation": "JavaScript runs in browsers and also in non-browser environments that provide a JavaScript runtime."}
+      ]
+    },
+    {
+      "subject": "Data analytics",
+      "subject_aliases": ["data analytics", "data analysis", "statistics"],
+      "title": "Data analytics",
+      "aliases": ["data analytics", "what is data analytics", "explain data analytics", "data analysis", "what is data analysis", "explain data analysis"],
+      "explanation": "Data analytics is the process of examining and organizing data to answer questions, find patterns, and support decisions. A typical workflow defines a question, collects and cleans relevant data, analyzes it, checks the results, and communicates findings. The method depends on the question and data quality.",
+      "summary": "- Data analytics examines data to answer questions and support decisions.\n- Common steps include defining a question, preparing data, analyzing it, and communicating findings.\n- Data quality and method choice affect conclusions.\n- Describing a pattern does not by itself prove what caused it.",
+      "quiz": [
+        {"question": "What is a main goal of data analytics?", "choices": ["Use data to answer questions and support decisions", "Make every dataset error-free automatically", "Guarantee a causal explanation from any pattern", "Replace the need to define a question"], "answer_index": 0, "explanation": "Data analytics helps examine data to answer questions and inform decisions."},
+        {"question": "Which is a useful early step in an analytics workflow?", "choices": ["Define the question to investigate", "Hide the data source", "Assume the result first", "Ignore data quality"], "answer_index": 0, "explanation": "A clear question helps determine what data and analysis are relevant."},
+        {"question": "Does finding a pattern alone prove its cause?", "choices": ["No", "Yes, always", "Only if it is shown as a chart", "Only when there are many columns"], "answer_index": 0, "explanation": "An observed association or pattern alone does not establish causation."}
+      ]
+    },
+    {
+      "subject": "Python",
+      "subject_aliases": ["python", "python programming"],
+      "title": "Python variables",
+      "aliases": ["variable", "variables", "assign a variable", "python variable", "python variables"],
+      "explanation": "In Python, a variable name refers to a value. Use `=` to assign a value; Python determines the value's type at runtime.\n\n```python\nname = \"Ada\"\nscore = 3\nprint(name, score)\n```\n\nOutput:\n```text\nAda 3\n```\n\nHere, `name` refers to the string `\"Ada\"`, and `score` refers to the integer `3`.",
+      "summary": "- A variable is a name bound to a value.\n- `=` assigns a value to a variable.\n- Python variables do not need a declared type.\n- Names are case-sensitive, so `score` and `Score` are different names.",
+      "quiz": [
+        {"question": "What does `score = 3` do in Python?", "choices": ["Assigns the integer 3 to score", "Compares score with 3", "Creates a SQL table", "Prints the number 3"], "answer_index": 0, "explanation": "The equals sign assigns the value on its right to the variable name on its left."},
+        {"question": "What does `print(name)` do after `name = \"Ada\"`?", "choices": ["Displays Ada", "Deletes name", "Changes name to a number", "Raises an error because Python needs a type declaration"], "answer_index": 0, "explanation": "The variable refers to the string Ada, and print displays that value."},
+        {"question": "Are Python names `score` and `Score` the same variable?", "choices": ["No, Python names are case-sensitive", "Yes, capitalization is ignored", "Only inside a function", "Only when the values are numbers"], "answer_index": 0, "explanation": "Python distinguishes uppercase and lowercase letters in names."}
+      ]
+    },
+    {
+      "subject": "Python",
+      "subject_aliases": ["python", "python programming"],
+      "title": "Python lists",
+      "aliases": ["list", "lists", "python list", "python lists", "list indexing"],
+      "explanation": "A Python list is an ordered, changeable collection. Indexes start at zero, so `colors[0]` reads the first item.\n\n```python\ncolors = [\"red\", \"blue\"]\ncolors.append(\"green\")\nprint(colors[0], len(colors))\n```\n\nOutput:\n```text\nred 3\n```\n\n`append` adds an item to the end, and `len` returns the number of items.",
+      "summary": "- Lists keep items in order and can be changed.\n- Indexing starts at `0`.\n- `append(value)` adds an item at the end.\n- `len(my_list)` gives the number of items.",
+      "quiz": [
+        {"question": "What is the index of the first item in a Python list?", "choices": ["0", "1", "-1", "The list length"], "answer_index": 0, "explanation": "Python list indexes start at zero."},
+        {"question": "What does `items.append(\"x\")` do?", "choices": ["Adds \"x\" to the end of items", "Removes the first item", "Sorts the list", "Returns the list length"], "answer_index": 0, "explanation": "The append method adds its argument to the end of a list."},
+        {"question": "What does `len(items)` return?", "choices": ["The number of items", "The last item", "The first index", "A new list"], "answer_index": 0, "explanation": "The built-in len function returns the number of elements in the list."}
+      ]
+    },
+    {
+      "subject": "Python",
+      "subject_aliases": ["python", "python programming"],
+      "title": "Python loops",
+      "aliases": ["python loop", "python loops", "for loop", "while loop", "for loops", "while loops", "loop through a list"],
+      "explanation": "Python loops repeat code. A `for` loop iterates over items in a sequence or other iterable; a `while` loop repeats as long as its condition is true.\n\n```python\nfor number in [1, 2, 3]:\n    print(number)\n```\n\nOutput:\n```text\n1\n2\n3\n```\n\nThe loop assigns each list item to `number` in turn. Indentation marks the loop body.",
+      "summary": "- `for` loops iterate over items in an iterable.\n- `while` loops continue while their condition is true.\n- Indentation identifies the loop body in Python.\n- Ensure a while-loop condition eventually becomes false to avoid an unintended infinite loop.",
+      "quiz": [
+        {"question": "What does a Python `for` loop commonly do?", "choices": ["Iterates over items in an iterable", "Defines a SQL table", "Styles an HTML element", "Always repeats forever"], "answer_index": 0, "explanation": "A for loop executes its body for each item yielded by an iterable."},
+        {"question": "When does a Python `while` loop continue?", "choices": ["While its condition is true", "Only once regardless of condition", "When a CSS selector matches", "When a SQL table exists"], "answer_index": 0, "explanation": "A while loop evaluates its condition and continues as long as it is true."},
+        {"question": "What is the output of the example loop over [1, 2, 3] that prints each number?", "choices": ["1, then 2, then 3 on separate lines", "Only 3", "The text [1, 2, 3] once", "No output"], "answer_index": 0, "explanation": "The loop visits each number and print writes each one on its own line."}
+      ]
+    },
+    {
+      "subject": "Java",
+      "subject_aliases": ["java", "java programming"],
+      "title": "Java classes and objects",
+      "aliases": ["class", "classes", "object", "objects", "java class", "java classes", "java object", "java objects"],
+      "explanation": "A Java class defines fields and methods for a kind of object. An object is an instance created from that class.\n\n```java\nclass Greeter {\n    String message = \"Hello\";\n}\n\nGreeter greeter = new Greeter();\nSystem.out.println(greeter.message);\n```\n\nOutput:\n```text\nHello\n```\n\n`new Greeter()` constructs an object, and `greeter.message` reads its field.",
+      "summary": "- A class describes fields and methods.\n- An object is an instance of a class.\n- `new` constructs an object in this example.\n- The dot operator accesses a member such as `greeter.message`.",
+      "quiz": [
+        {"question": "What is a Java class?", "choices": ["A definition for objects and their members", "A database row", "A CSS selector", "A command that prints text"], "answer_index": 0, "explanation": "A class defines the structure and behavior that its objects can have."},
+        {"question": "What does `new Greeter()` create?", "choices": ["A Greeter object", "A Java package", "A SQL query", "A string literal"], "answer_index": 0, "explanation": "The new expression constructs an instance of the Greeter class."},
+        {"question": "How does `greeter.message` access message?", "choices": ["With the dot member-access operator", "With a CSS selector", "By adding two values", "By declaring a new class"], "answer_index": 0, "explanation": "Java uses a dot to access a field or method on an object."}
+      ]
+    },
+    {
+      "subject": "JavaScript",
+      "subject_aliases": ["javascript", "js", "javascript programming"],
+      "title": "JavaScript variables",
+      "aliases": ["variable", "variables", "let", "const", "javascript variable", "javascript variables"],
+      "explanation": "JavaScript variables hold references to values. Use `const` when you will not reassign the binding, and `let` when reassignment is needed.\n\n```javascript\nconst language = \"JavaScript\";\nlet count = 1;\ncount = count + 1;\nconsole.log(language, count);\n```\n\nOutput:\n```text\nJavaScript 2\n```\n\n`const` prevents rebinding `language`; it does not make every object stored in a const binding immutable.",
+      "summary": "- `let` declares a block-scoped binding that can be reassigned.\n- `const` declares a block-scoped binding that cannot be reassigned.\n- `const` does not make an object value itself immutable.\n- `console.log` writes values to the JavaScript console.",
+      "quiz": [
+        {"question": "Which declaration prevents reassignment of the binding?", "choices": ["const", "let", "print", "SELECT"], "answer_index": 0, "explanation": "A const binding cannot be reassigned after initialization."},
+        {"question": "Can a `let` variable be reassigned?", "choices": ["Yes", "No, never", "Only in SQL", "Only when declared in HTML"], "answer_index": 0, "explanation": "A let binding can be assigned a new value."},
+        {"question": "What does `console.log(\"Hi\")` do?", "choices": ["Writes Hi to the console", "Creates an HTML heading", "Changes a CSS color", "Declares a constant"], "answer_index": 0, "explanation": "console.log outputs its arguments to the JavaScript console."}
+      ]
+    },
+    {
+      "subject": "SQL",
+      "subject_aliases": ["sql", "database", "databases", "structured query language"],
+      "title": "SQL SELECT queries",
+      "aliases": ["select", "select query", "select statement", "sql select", "sql query", "filter rows", "where clause"],
+      "explanation": "SQL `SELECT` reads columns from rows in a table. `WHERE` filters which rows are returned.\n\n```sql\nSELECT name, age\nFROM students\nWHERE age >= 18;\n```\n\nThis returns the `name` and `age` columns for students whose age is at least 18. It does not change the table.",
+      "summary": "- `SELECT` names the columns to read.\n- `FROM` names the table.\n- `WHERE` filters rows using a condition.\n- A SELECT query reads data; it does not update the rows.",
+      "quiz": [
+        {"question": "In `SELECT name FROM students`, what does `FROM` identify?", "choices": ["The table to read", "The rows to delete", "A CSS file", "The output format"], "answer_index": 0, "explanation": "FROM specifies the table from which the query reads rows."},
+        {"question": "What does a WHERE clause do in a SELECT query?", "choices": ["Filters rows by a condition", "Renames the database", "Adds a new table column", "Sorts the result automatically"], "answer_index": 0, "explanation": "WHERE includes only rows for which its condition is true."},
+        {"question": "Does a basic SELECT query update table data?", "choices": ["No, it reads and returns data", "Yes, it always changes every row", "Only when selecting two columns", "Only in HTML"], "answer_index": 0, "explanation": "SELECT is used to retrieve data; UPDATE is the SQL command for changing rows."}
+      ]
+    },
+    {
+      "subject": "HTML",
+      "subject_aliases": ["html", "web markup", "hypertext markup language"],
+      "title": "HTML document structure",
+      "aliases": ["document structure", "html structure", "html elements", "html tags", "html page", "body", "body element", "html body"],
+      "explanation": "HTML describes the structure and meaning of web content using elements. A basic page includes a document type declaration, an `html` root, metadata in `head`, and visible content in `body`.\n\n```html\n<!doctype html>\n<html>\n  <head><title>Example</title></head>\n  <body><h1>Hello</h1></body>\n</html>\n```\n\nThe browser displays “Hello” as a level-one heading. HTML structures content; CSS controls presentation.",
+      "summary": "- HTML elements mark up and structure content.\n- `head` contains document metadata; `body` contains page content.\n- `h1` is a top-level heading element.\n- CSS is used to style the structure.",
+      "quiz": [
+        {"question": "Which HTML element contains visible page content?", "choices": ["body", "head", "title only", "style"], "answer_index": 0, "explanation": "The body element contains the document's page content."},
+        {"question": "What does `<h1>` represent?", "choices": ["A top-level heading", "A database table", "A CSS color", "A JavaScript variable"], "answer_index": 0, "explanation": "The h1 element represents a top-level heading."},
+        {"question": "Which technology primarily styles HTML presentation?", "choices": ["CSS", "SQL", "Python", "CSV"], "answer_index": 0, "explanation": "CSS controls presentation and visual styling for web documents."}
+      ]
+    },
+    {
+      "subject": "CSS",
+      "subject_aliases": ["css", "cascading style sheets", "web styling"],
+      "title": "CSS selectors",
+      "aliases": ["selector", "selectors", "css selector", "css selectors", "class selector", "id selector"],
+      "explanation": "A CSS selector chooses which HTML elements a style rule affects. A type selector targets a tag, `.notice` targets elements with class `notice`, and `#main` targets the element with id `main`.\n\n```css\n.notice { color: navy; }\n```\n\nThis sets the text color of elements whose class list includes `notice`. The rule changes presentation, not HTML content.",
+      "summary": "- Selectors choose the elements to style.\n- `p` selects paragraph elements.\n- `.notice` selects elements with class `notice`.\n- `#main` selects the element with id `main`.",
+      "quiz": [
+        {"question": "Which selector targets elements with class `notice`?", "choices": [".notice", "#notice", "notice()", "SELECT notice"], "answer_index": 0, "explanation": "A period followed by a name selects elements with that class."},
+        {"question": "Which CSS selector uses an element id?", "choices": ["#main", ".main", "main()", "@main"], "answer_index": 0, "explanation": "The # prefix selects an element by its id."},
+        {"question": "What does the CSS declaration `color: navy` set?", "choices": ["Text color", "Database name", "HTML document title", "Java variable type"], "answer_index": 0, "explanation": "The color property sets the foreground color, commonly the text color."}
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "subject_aliases": ["math", "mathematics", "arithmetic"],
+      "title": "Adding fractions with common denominators",
+      "aliases": ["add fractions", "adding fractions", "fraction addition", "fractions with same denominator", "common denominator fractions", "add 2/7 and 3/7"],
+      "explanation": "When fractions have the same nonzero denominator, add their numerators and keep the denominator. For example, `2/7 + 3/7 = 5/7`. The parts are sevenths, so two sevenths plus three sevenths is five sevenths.",
+      "summary": "- With a common denominator, add the numerators.\n- Keep the shared denominator.\n- Simplify the result if numerator and denominator have a common factor.\n- Example: `2/7 + 3/7 = 5/7`.",
+      "quiz": [
+        {"question": "What is `2/7 + 3/7`?", "choices": ["5/7", "5/14", "6/7", "1/7"], "answer_index": 0, "explanation": "The denominators match, so add the numerators: 2 + 3 = 5, keeping denominator 7."},
+        {"question": "When adding fractions with the same denominator, what happens to the denominator?", "choices": ["Keep it", "Add it to itself", "Multiply it by the numerator", "Change it to zero"], "answer_index": 0, "explanation": "The denominator remains the same because the fractions use equal-sized parts."},
+        {"question": "What is `1/5 + 2/5`?", "choices": ["3/5", "3/10", "2/5", "1/25"], "answer_index": 0, "explanation": "Add the numerators 1 and 2 and keep the shared denominator 5."}
+      ]
+    },
+    {
+      "subject": "Mathematics",
+      "subject_aliases": ["math", "mathematics", "algebra"],
+      "title": "Solving a one-step linear equation",
+      "aliases": ["solve linear equation", "linear equation", "one step equation", "solve for x", "equation"],
+      "explanation": "To solve a one-step equation, use the inverse operation on both sides to keep the equation balanced. For `x + 3 = 8`, subtract 3 from both sides: `x = 8 - 3 = 5`. Check by substituting: `5 + 3 = 8`.",
+      "summary": "- An equation stays balanced when the same operation is applied to both sides.\n- Undo addition with subtraction, and undo multiplication with division (when dividing by a nonzero number).\n- Check a solution by substituting it into the original equation.\n- Example: `x + 3 = 8` gives `x = 5`.",
+      "quiz": [
+        {"question": "Solve `x + 3 = 8`.", "choices": ["x = 5", "x = 11", "x = 24", "x = 3"], "answer_index": 0, "explanation": "Subtract 3 from both sides: x = 8 - 3 = 5."},
+        {"question": "What operation undoes adding 4 to x?", "choices": ["Subtract 4", "Add 4 again", "Multiply by 4", "Set x to 0"], "answer_index": 0, "explanation": "Subtraction by 4 is the inverse of addition by 4."},
+        {"question": "How can you check a proposed solution to an equation?", "choices": ["Substitute it into the original equation", "Change only the left side", "Remove the equals sign", "Always multiply by zero"], "answer_index": 0, "explanation": "A solution should make the original equation true when substituted."}
+      ]
+    },
+    {
+      "subject": "Science",
+      "subject_aliases": ["science", "biology", "plant biology"],
+      "title": "Photosynthesis",
+      "aliases": ["photosynthesis", "how plants make food", "plant photosynthesis"],
+      "explanation": "Photosynthesis is the process by which plants, algae, and some bacteria use light energy to make sugars from carbon dioxide and water. In plants, it occurs mainly in chloroplasts. A simplified balanced equation is `6 CO2 + 6 H2O + light energy -> C6H12O6 + 6 O2`.",
+      "summary": "- Photosynthesis converts light energy into chemical energy stored in sugars.\n- It uses carbon dioxide and water and, in the overall process, releases oxygen.\n- In plants, it takes place mainly in chloroplasts.\n- Simplified equation: `6 CO2 + 6 H2O + light -> C6H12O6 + 6 O2`.",
+      "quiz": [
+        {"question": "Which gas is used as a reactant in the simplified photosynthesis equation?", "choices": ["Carbon dioxide", "Nitrogen", "Helium", "Neon"], "answer_index": 0, "explanation": "Carbon dioxide and water are reactants in the simplified photosynthesis equation."},
+        {"question": "What energy source powers photosynthesis?", "choices": ["Light", "Sound", "Earthquakes", "Magnetism"], "answer_index": 0, "explanation": "Photosynthetic organisms capture light energy to drive sugar production."},
+        {"question": "Where does photosynthesis occur mainly in plant cells?", "choices": ["Chloroplasts", "Ribosomes only", "Cell walls", "Nuclei only"], "answer_index": 0, "explanation": "Chloroplasts contain the photosynthetic machinery in plant cells."}
+      ]
+    },
+    {
+      "subject": "Data analytics",
+      "subject_aliases": ["data analytics", "data analysis", "statistics"],
+      "title": "Arithmetic mean",
+      "aliases": ["mean", "average", "arithmetic mean", "calculate the mean", "calculate average"],
+      "explanation": "The arithmetic mean is the sum of numeric values divided by how many values there are. For `2, 4, 6`, the mean is `(2 + 4 + 6) / 3 = 4`. A very large or small outlier can pull the mean toward itself.",
+      "summary": "- Add all values and divide by the number of values.\n- For `2, 4, 6`, the mean is `4`.\n- The mean uses every value and can be affected by outliers.\n- The median is a different measure: the middle value after sorting.",
+      "quiz": [
+        {"question": "What is the mean of 2, 4, and 6?", "choices": ["4", "3", "6", "12"], "answer_index": 0, "explanation": "Their sum is 12; divide by 3 values to get 4."},
+        {"question": "How is the arithmetic mean calculated?", "choices": ["Sum the values and divide by their count", "Choose the largest value", "Subtract the smallest from the largest", "Count only zeroes"], "answer_index": 0, "explanation": "The mean equals the total of the values divided by the number of values."},
+        {"question": "What can an extreme outlier do to the mean?", "choices": ["Pull the mean toward itself", "It can never affect the mean", "Turn the mean into the median", "Remove the other values"], "answer_index": 0, "explanation": "Because the mean uses every numeric value, an extreme value can shift it."}
+      ]
+    },
+    {
+      "subject": "General technology",
+      "subject_aliases": ["general", "technology", "programming", "computer science"],
+      "title": "SQL and Python compared",
+      "aliases": ["difference between sql and python", "sql vs python", "compare sql and python", "python vs sql"],
+      "explanation": "SQL and Python are different but complementary tools that are often used together. SQL is a language for defining, querying, and manipulating data in relational databases. Python is a general-purpose programming language used for tasks such as automation, web development, data analysis, and AI. For example, a data analyst might use SQL to retrieve rows and Python to analyze the resulting data.",
+      "summary": "- SQL specializes in working with relational database data.\n- Python is a general-purpose programming language.\n- They are complementary: retrieve data with SQL, then process or analyze it with Python.\n- Neither is a replacement for the other in every task.",
+      "quiz": [
+        {"question": "Which language is designed for querying relational databases?", "choices": ["SQL", "CSS", "HTML", "Python only"], "answer_index": 0, "explanation": "SQL is designed for defining, querying, and manipulating relational database data."},
+        {"question": "Which is a general-purpose programming language?", "choices": ["Python", "SQL only", "HTML", "CSS"], "answer_index": 0, "explanation": "Python is a general-purpose language, while SQL specializes in relational data."},
+        {"question": "How might a data workflow use SQL and Python together?", "choices": ["SQL retrieves data and Python analyzes it", "CSS retrieves data and HTML computes statistics", "Python styles database tables and SQL creates web headings", "They cannot be used in the same workflow"], "answer_index": 0, "explanation": "A common workflow queries data with SQL and then uses Python for further processing or analysis."}
+      ]
+    },
+    {
+      "subject": "Artificial intelligence",
+      "subject_aliases": ["artificial intelligence", "ai"],
+      "title": "Artificial intelligence",
+      "aliases": ["artificial intelligence", "what is ai", "ai definition", "ai systems"],
+      "explanation": "Artificial intelligence (AI) is a broad field focused on building computer systems that perform tasks commonly associated with human capabilities, such as recognizing patterns, understanding language, or making predictions. AI is a field, not a guarantee that a system thinks or understands like a person.",
+      "summary": "- AI is a broad field of computer science and engineering.\n- AI systems can perform tasks such as pattern recognition, language processing, or prediction.\n- A system's successful output does not prove that it has human-like understanding.\n- Machine learning is one approach within AI.",
+      "quiz": [
+        {"question": "Which statement best describes artificial intelligence?", "choices": ["A broad field building systems for tasks such as prediction or language processing", "A single programming language", "A guarantee that computers think like people", "A type of database table"], "answer_index": 0, "explanation": "AI is an umbrella field covering computer systems that perform a range of tasks associated with intelligent behavior."},
+        {"question": "Does an AI system's useful output prove it understands like a human?", "choices": ["No", "Yes, always", "Only if it uses a screen", "Only when it is offline"], "answer_index": 0, "explanation": "Task performance alone does not establish human-like understanding."},
+        {"question": "Which is one approach within AI?", "choices": ["Machine learning", "HTML headings", "SQL SELECT only", "CSS layout"], "answer_index": 0, "explanation": "Machine learning is a subfield and approach within the broader AI field."}
+      ]
+    },
+    {
+      "subject": "Machine learning",
+      "subject_aliases": ["machine learning", "ml", "artificial intelligence", "ai"],
+      "title": "Machine learning",
+      "aliases": ["what is machine learning", "machine learning definition", "machine learning basics"],
+      "explanation": "Machine learning is an area of AI in which algorithms learn patterns from data to make predictions or decisions, rather than being programmed with a separate hand-written rule for every case. For example, a model trained on labeled examples of spam and non-spam messages can predict a label for a new message. Its predictions are not guaranteed to be correct.",
+      "summary": "- Machine learning is a field within AI.\n- Models learn patterns from data to make predictions or decisions.\n- Supervised learning uses examples with known labels; other approaches use different training signals.\n- Model performance must be evaluated; a prediction can be wrong.",
+      "quiz": [
+        {"question": "What is machine learning?", "choices": ["An area of AI where algorithms learn patterns from data", "A markup language for headings", "A guarantee every prediction is correct", "A SQL transaction command"], "answer_index": 0, "explanation": "Machine learning methods use data to learn patterns that support predictions or decisions."},
+        {"question": "What might a spam classifier learn from training examples?", "choices": ["Patterns that help label new messages", "How to render CSS colors", "How to create HTML tags", "The contents of every future email with certainty"], "answer_index": 0, "explanation": "A classifier can learn patterns from examples and use them to predict labels for new messages."},
+        {"question": "Are machine-learning predictions always correct?", "choices": ["No, models can make mistakes", "Yes, by definition", "Only when data is stored in SQL", "Only for images"], "answer_index": 0, "explanation": "Predictions can be wrong and should be evaluated."}
+      ]
+    },
+    {
+      "subject": "Machine learning",
+      "subject_aliases": ["machine learning", "ml", "artificial intelligence", "ai"],
+      "title": "Supervised machine learning",
+      "aliases": ["supervised learning", "supervised machine learning", "labeled data", "machine learning training"],
+      "explanation": "In supervised machine learning, a model learns patterns from training examples that include both inputs and known target labels. For example, a spam classifier can learn from messages marked “spam” or “not spam.” It then predicts labels for new examples; its predictions can be wrong and should be evaluated.",
+      "summary": "- Training examples include input features and known target labels.\n- The model learns patterns that can help predict labels for new inputs.\n- A spam classifier trained on labeled messages is one example.\n- Evaluation on data not used for training helps estimate performance.",
+      "quiz": [
+        {"question": "What information do supervised training examples include?", "choices": ["Inputs and known target labels", "Only unlabeled outputs", "Only CSS rules", "A list of SQL commands"], "answer_index": 0, "explanation": "Supervised learning uses examples paired with target labels or values."},
+        {"question": "Which is an example of supervised learning?", "choices": ["Learning from emails labeled spam or not spam", "Choosing random answers without examples", "Styling a heading with CSS", "Sorting a list by hand"], "answer_index": 0, "explanation": "The email labels provide known targets from which a classifier can learn."},
+        {"question": "Why evaluate a model on data not used for training?", "choices": ["To estimate how well it generalizes to new examples", "To guarantee every prediction is correct", "To create HTML tags", "To remove all input features"], "answer_index": 0, "explanation": "Unseen evaluation data helps measure performance beyond memorized training examples."}
+      ]
+    }
+  ]
+}
