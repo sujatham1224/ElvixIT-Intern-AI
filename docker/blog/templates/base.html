@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A friendly little blog built with Flask and PostgreSQL.">
+  <title>{% block title %}Compose Blog{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="{{ url_for('blog.index') }}">fieldnotes<span>.</span></a>
+      <a class="button button-small" href="{{ url_for('blog.create_post') }}">Write a post <span aria-hidden="true">+</span></a>
+    </nav>
+  </header>
+  <main class="container">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-list" aria-live="polite">
+          {% for category, message in messages %}
+            <p class="flash flash-{{ category }}">{{ message }}</p>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer container">Made for curious minds <span aria-hidden="true">·</span> Powered by Flask &amp; PostgreSQL</footer>
+</body>
+</html>

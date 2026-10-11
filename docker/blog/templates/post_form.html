@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ heading }} — Fieldnotes{% endblock %}
+{% block content %}
+  <section class="form-page">
+    <a class="back-link" href="{{ url_for('blog.show_post', post_id=post.id) if post else url_for('blog.index') }}">← {% if post %}Back to story{% else %}All stories{% endif %}</a>
+    <p class="eyebrow">{% if post %}Make it yours{% else %}Put it into words{% endif %}</p>
+    <h1>{{ heading }}<span class="accent">.</span></h1>
+    <form method="post" class="post-form" novalidate>
+      {{ form.hidden_tag() }}
+      <div class="field">
+        {{ form.title.label }}
+        {{ form.title(placeholder="Give your story a title", maxlength=120, autofocus=true) }}
+        {% for error in form.title.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+      </div>
+      <div class="field">
+        {{ form.content.label }}
+        {{ form.content(placeholder="Start with a thought…", rows=12, maxlength=20000) }}
+        {% for error in form.content.errors %}<span class="field-error">{{ error }}</span>{% endfor %}
+      </div>
+      {{ form.submit(class_="button") }}
+    </form>
+  </section>
+{% endblock %}

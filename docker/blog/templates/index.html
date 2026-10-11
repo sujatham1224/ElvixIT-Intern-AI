@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Fieldnotes — a little blog{% endblock %}
+{% block content %}
+  <section class="hero">
+    <p class="eyebrow">A little corner of the internet</p>
+    <h1>Ideas worth<br><em>coming back to.</em></h1>
+    <p class="hero-copy">Notes, stories, and things we’ve learned along the way.</p>
+  </section>
+  <section class="posts-section" aria-labelledby="posts-heading">
+    <div class="section-heading">
+      <h2 id="posts-heading">Latest stories</h2>
+      <span class="post-count">{{ posts|length }} {% if posts|length == 1 %}story{% else %}stories{% endif %}</span>
+    </div>
+    {% if posts %}
+      <div class="post-list">
+        {% for post in posts %}
+          <article class="post-card">
+            <p class="post-date">{{ post.created_at.strftime("%B %d, %Y") }}</p>
+            <h3><a href="{{ url_for('blog.show_post', post_id=post.id) }}">{{ post.title }}</a></h3>
+            <p class="post-excerpt">{{ post.content|striptags|truncate(220) }}</p>
+            <a class="read-link" href="{{ url_for('blog.show_post', post_id=post.id) }}">Read story <span aria-hidden="true">→</span></a>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <span class="empty-icon" aria-hidden="true">✳</span>
+        <h3>Your first story starts here.</h3>
+        <p>There are no posts yet. Put an idea into words and share it with the world.</p>
+        <a class="button" href="{{ url_for('blog.create_post') }}">Write the first post <span aria-hidden="true">→</span></a>
+      </div>
+    {% endif %}
+  </section>
+{% endblock %}

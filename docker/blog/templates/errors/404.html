@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Page not found — Fieldnotes{% endblock %}
+{% block content %}
+  <section class="error-page">
+    <p class="eyebrow">404 · Wrong turn</p>
+    <h1>This page wandered off<span class="accent">.</span></h1>
+    <p>We couldn’t find that page or story. It may have moved or never existed.</p>
+    <a class="button" href="{{ url_for('blog.index') }}">Back to the homepage</a>
+  </section>
+{% endblock %}
