@@ -1,0 +1,12 @@
+import { Check, Clock3, House, PackageCheck } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { formatPrice } from "../lib/format";
+import type { DemoOrder } from "../types";
+
+export function ConfirmationPage() {
+  const navigate = useNavigate();
+  let order: DemoOrder | null = null;
+  try { order = JSON.parse(sessionStorage.getItem("quickbite-last-order") ?? "null") as DemoOrder | null; } catch { order = null; }
+  if (!order) return <div className="page-wrap confirmation-wrap"><div className="confirmation-card"><div className="success-icon"><Check size={34} /></div><h1>No recent order</h1><p>Your demo order details will appear here after checkout.</p><Link to="/restaurants" className="button button-primary">Explore restaurants</Link></div></div>;
+  return <div className="page-wrap confirmation-wrap"><section className="confirmation-card"><div className="success-icon"><Check size={34} /></div><span className="eyebrow">That's a wrap</span><h1>Your order has been placed!</h1><p>Thanks, {order.customerName}. Your taste buds are in for a treat.</p><div className="order-reference">{order.reference}</div><div className="delivery-estimate"><Clock3 size={22} /><div><strong>Estimated delivery: 30–40 minutes</strong><small>Illustrative estimate only — this demo does not book delivery.</small></div></div><div className="confirmed-items"><h2>Order summary</h2>{order.items.map((item) => <div className="summary-line" key={item.id}><span>{item.quantity} × {item.name}</span><strong>{formatPrice(item.quantity * item.price)}</strong></div>)}<div className="summary-line"><span>Delivery fee</span><strong>{order.deliveryFee ? formatPrice(order.deliveryFee) : "Free"}</strong></div>{order.discount > 0 && <div className="summary-line discount-line"><span>FIRSTBITE discount</span><strong>−{formatPrice(order.discount)}</strong></div>}<div className="summary-line total-line"><span>Total (demo)</span><strong>{formatPrice(order.total)}</strong></div></div><div className="confirmation-actions"><button className="button button-outline" onClick={() => navigate(`/orders/${order.reference}`)}><PackageCheck size={17} /> View Order</button><button className="button button-primary" onClick={() => navigate("/")}><House size={16} /> Back to Home</button></div><p className="demo-caption">Demo confirmation · No real order or payment was created.</p></section></div>;
+}
