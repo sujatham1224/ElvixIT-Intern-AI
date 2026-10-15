@@ -1,0 +1,217 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Student Registration Form",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Student_ID",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Student_Name",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Email",
+              "fieldType": "email",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Phone_Number",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Course_Name",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Data Analytics"
+                  },
+                  {
+                    "option": "Cloud Computing"
+                  },
+                  {
+                    "option": "Full Stack Development"
+                  },
+                  {
+                    "option": "SAP"
+                  },
+                  {
+                    "option": "Java Developer"
+                  },
+                  {
+                    "option": "AI Engineer"
+                  },
+                  {
+                    "option": "Devops"
+                  }
+                ]
+              },
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Status",
+              "fieldType": "dropdown",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Active"
+                  },
+                  {
+                    "option": "In Active"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.6,
+      "position": [
+        0,
+        0
+      ],
+      "id": "698650f5-ca3b-4c1b-94ef-a010179acdfc",
+      "name": "On form submission",
+      "webhookId": "b860b52f-8191-4fd0-ba5e-b195ea79115e"
+    },
+    {
+      "parameters": {
+        "operation": "append",
+        "documentId": {
+          "__rl": true,
+          "value": "1C0cerprXIazw6aWj-GnVIKnTpO13PYRcuOjhygSpDr0",
+          "mode": "list",
+          "cachedResultName": "student registration",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0cerprXIazw6aWj-GnVIKnTpO13PYRcuOjhygSpDr0/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "Stu_registration",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1C0cerprXIazw6aWj-GnVIKnTpO13PYRcuOjhygSpDr0/edit#gid=0"
+        },
+        "columns": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "Student_ID": "={{ $json.Student_ID }}",
+            "Student_Name": "={{ $json.Student_Name }}",
+            "Phone_Number": "={{ $json.Phone_Number }}",
+            "Email": "={{ $json.Email }}",
+            "Course_Name": "={{ $json.Course_Name }}",
+            "Status": "={{ $json.Status }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "Student_ID",
+              "displayName": "Student_ID",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Student_Name",
+              "displayName": "Student_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Email",
+              "displayName": "Email",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Phone_Number",
+              "displayName": "Phone_Number",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Course_Name",
+              "displayName": "Course_Name",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            },
+            {
+              "id": "Status",
+              "displayName": "Status",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "type": "string",
+              "canBeUsedToMatch": true
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        224,
+        0
+      ],
+      "id": "4e5bc66b-5bbe-4056-8012-f9b88a64698d",
+      "name": "Append row in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "gXrqe9rWxZlApenR",
+          "name": "Google Sheets account"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "On form submission": {
+      "main": [
+        [
+          {
+            "node": "Append row in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "e8b5aab2-b0e0-41b9-b750-f9a5b68b286d",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e593780dae0f0ea15b31aa5ca6c4e35532001e32151bfa61dc1fdef577a327b8"
+  },
+  "nodeGroups": [],
+  "id": "0LpyR49cp888BKGM",
+  "tags": []
+}
