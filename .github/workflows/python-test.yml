@@ -1,0 +1,36 @@
+name: Python Automated Tests
+
+on:
+  push:
+    branches:
+      - github-actions
+
+  pull_request:
+    branches:
+      - github-actions
+
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run Python Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check Python files
+        run: |
+          test -f app.py
+          test -f test_app.py
+
+      - name: Run automated tests
+        run: python -m unittest discover -s . -p "test_*.py" -v
