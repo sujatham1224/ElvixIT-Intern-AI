@@ -1,3 +1,4 @@
+
 name: Python Automated Tests
 
 on:
@@ -9,6 +10,7 @@ on:
     branches:
       - github-actions
 
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -27,10 +29,10 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Check Python files
+      - name: Show repository files
         run: |
-          test -f app.py
-          test -f test_app.py
+          pwd
+          ls -la
 
       - name: Run automated tests
         run: python -m unittest discover -s . -p "test_*.py" -v
